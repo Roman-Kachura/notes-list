@@ -1,0 +1,36 @@
+@import 'variables.module.scss';
+
+html {
+  font-size: 1.1111vw;
+  background: $general-background;
+  color: $general-color;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  transition: .3s;
+  background: $transparent-background;
+  color: $general-color;
+  padding: 0;
+  cursor: pointer;
+}

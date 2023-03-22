@@ -1,0 +1,38 @@
+@import "../../variables.module";
+
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: $general-gap;
+  width: $general-width;
+  margin-bottom: $general-gap;
+
+  input {
+    height: 100%;
+    width: 70%;
+    font-size: 1.1111vw;
+    padding: $general-padding;
+    border: $general-border;
+    border-right:none;
+    border-top-left-radius: $general-border-radius;
+    border-bottom-left-radius: $general-border-radius;
+    background: $general-background;
+    color: $general-color;
+  }
+  button{
+    width: 30%;
+    height: 100%;
+    border-top-right-radius: $general-border-radius;
+    border-bottom-right-radius: $general-border-radius;
+    background: #13a2e5;
+    font-weight: 700;
+    border:$general-border;
+    border-color: $transparent-background;
+    text-transform: uppercase;
+
+    &.addButton{
+      background: green;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../variables.module";
+
+.notes {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: $general-gap;
+  width: $general-width;
+
+  .noteItem {
+    width: 100%;
+    padding: 1.5vw 1vw;
+    border-radius: $general-border-radius;
+    border: $general-border;
+    background: $general-background;
+    position: relative;
+
+    .text {
+      margin-bottom: 1.5vw;
+      margin-top: 0.34722vw;
+      word-break: break-all;
+      hyphens: manual;
+
+      textarea {
+        width: 100%;
+        border-radius: $general-border-radius;
+        border: $general-border;
+        background: $general-background;
+        color: $general-color;
+        padding: $general-padding;
+        margin-top: 0.34722vw;
+        font-size: 1vw;
+      }
+
+      button {
+        margin-right: .5vw;
+        font-size: 1.1111vw;
+      }
+    }
+
+    .removeButton {
+      color: red;
+      position: absolute;
+      top: .1vw;
+      right: 1vw;
+      font-size: 1.1111vw;
+    }
+
+    .editButton {
+      color: green;
+      position: absolute;
+      top: .1vw;
+      right: 3vw;
+      font-size: 1.1111vw;
+    }
+  }
+}
