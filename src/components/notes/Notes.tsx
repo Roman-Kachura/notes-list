@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Notes.module.scss';
 import {NoteItem} from './NoteItem';
-import {NotesContext} from '../App';
+import {NotesContext} from '../app/App';
 
 export const Notes: React.FC<NotesPropsType> = ({notes}) => {
     return (

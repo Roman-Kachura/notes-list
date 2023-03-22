@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import style from './App.module.scss';
-import {SearchPanel} from './panels/SearchPanel';
-import {Notes, NoteType} from './notes/Notes';
-import {AddPanel} from './panels/AddPanel';
+import {SearchPanel} from '../panels/SearchPanel';
+import {Notes, NoteType} from '../notes/Notes';
+import {AddPanel} from '../panels/AddPanel';
 
 export const NotesContext = React.createContext<NotesContextPropsType>({} as NotesContextPropsType);
 export const App: React.FC = () => {

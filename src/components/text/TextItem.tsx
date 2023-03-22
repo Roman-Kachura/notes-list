@@ -1,7 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {HashtagButton} from '../hashtags/HashtagButton';
 import style from '../notes/Notes.module.scss';
-import {NotesContext} from '../App';
+import {NotesContext} from '../app/App';
 
 export const TextItem: React.FC<TextItemPropsType> = ({className, text, updateNoteCallBack, isEditMode}) => {
     const [value, setValue] = useState(text);

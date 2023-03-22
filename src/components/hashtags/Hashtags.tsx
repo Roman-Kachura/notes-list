@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Hashtags.module.scss';
 import {HashtagButton} from './HashtagButton';
-import {NotesContext} from '../App';
+import {NotesContext} from '../app/App';
 
 export const Hashtags: React.FC<HashtagsPropsType> = ({hashtags}) => {
     return (
