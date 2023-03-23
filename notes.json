@@ -1,0 +1,26 @@
+{
+  "notes": [
+    {
+      "id": 0,
+      "text": "I wanna go to #shopping",
+      "hashtags": [
+        "#shopping"
+      ]
+    },
+    {
+      "id": 1,
+      "text": "I go to #running",
+      "hashtags": [
+        "#running"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "#Coding is cool and better than #running",
+      "hashtags": [
+        "#coding",
+        "#running"
+      ]
+    }
+  ]
+}
