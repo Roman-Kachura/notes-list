@@ -4,7 +4,7 @@ import {Hashtags} from '../hashtags/Hashtags';
 import {TextItem} from '../text/TextItem';
 
 export const NoteItem: React.FC<NoteItemPropsType> = (
-    {id, text, hashtags, removeNotesCallBack, updateNoteCallBack}
+    {id, text, hashtags, removeNotesCallBack, updateNoteCallBack, updateHashtagsCallBack}
 ) => {
     const [isEditMode, setIsEditMode] = useState(false);
     const changeEditModeHandler = (value: boolean) => setIsEditMode(value);
@@ -13,6 +13,7 @@ export const NoteItem: React.FC<NoteItemPropsType> = (
         updateNoteCallBack({id, text});
         changeEditModeHandler(false);
     }
+    const updateHashtags = (text: string) => updateHashtagsCallBack({id, text});
     const removeNote = () => removeNotesCallBack(id);
     return (
         <article className={style.noteItem}>
@@ -20,6 +21,7 @@ export const NoteItem: React.FC<NoteItemPropsType> = (
                 className={style.text}
                 text={text}
                 updateNoteCallBack={updateNote}
+                updateHashtagsCallBack={updateHashtags}
                 isEditMode={isEditMode}
             />
             <Hashtags hashtags={hashtags}/>
@@ -39,4 +41,5 @@ interface NoteItemPropsType {
     hashtags: string[]
     removeNotesCallBack: (id: number) => void
     updateNoteCallBack: (values: { id: number, text: string }) => void
+    updateHashtagsCallBack: (values: { id: number, text: string }) => void
 }

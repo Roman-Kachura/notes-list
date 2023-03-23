@@ -16,7 +16,7 @@ export const App: React.FC = () => {
         });
     }, []);
 
-    const getHashtagsFromText = (text: string) => text.split(' ').filter(w => w.charAt(0) === '#');
+    const getHashtagsFromText = (text: string) => text.toLowerCase().split(' ').filter(w => w.charAt(0) === '#');
 
     const addNote = (text: string) => {
         const hashtags = getHashtagsFromText(text);
@@ -26,11 +26,18 @@ export const App: React.FC = () => {
 
     const removeNote = (id: number) => setNotes(notes.filter(n => n.id !== id));
     const updateNote = (values: { id: number, text: string }) => {
-        const hashtags = getHashtagsFromText(values.text);
-        setNotes(notes.map(n => n.id !== values.id ? n : {...n, text: values.text, hashtags}));
+        if(values.text){
+            const hashtags = getHashtagsFromText(values.text);
+            setNotes(notes.map(n => n.id !== values.id ? n : {...n, text: values.text, hashtags}));
+        }
     }
 
-    const changeSearchTextValue = (value: string) => setSearchTextValue(value);
+    const updateHashtags = (values: { id: number, text: string }) => {
+        const hashtags = getHashtagsFromText(values.text);
+        setNotes(notes.map(n => n.id !== values.id ? n : {...n, hashtags}));
+    }
+
+    const changeSearchTextValue = (value: string) => setSearchTextValue(value.toLowerCase());
 
     return (
         <div className={style.app}>
@@ -41,7 +48,8 @@ export const App: React.FC = () => {
                     notes,
                     removeNotesCallBack: removeNote,
                     updateNoteCallBack: updateNote,
-                    changeSearchTextValueCallBack: changeSearchTextValue
+                    changeSearchTextValueCallBack: changeSearchTextValue,
+                    updateHashtagsCallBack:updateHashtags
                 }}>
                 <Notes
                     notes={!searchTextValue ? [...notes].reverse() : notes.filter(n => n.hashtags.includes(searchTextValue))}
@@ -56,5 +64,6 @@ interface NotesContextPropsType {
     notes: NoteType[]
     removeNotesCallBack: (id: number) => void
     updateNoteCallBack: (values: { id: number, text: string }) => void
+    updateHashtagsCallBack: (values: { id: number, text: string }) => void
     changeSearchTextValueCallBack: (value: string) => void
 }

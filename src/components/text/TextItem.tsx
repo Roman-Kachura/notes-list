@@ -3,9 +3,18 @@ import {HashtagButton} from '../hashtags/HashtagButton';
 import style from '../notes/Notes.module.scss';
 import {NotesContext} from '../app/App';
 
-export const TextItem: React.FC<TextItemPropsType> = ({className, text, updateNoteCallBack, isEditMode}) => {
+export const TextItem: React.FC<TextItemPropsType> = ({
+                                                          className,
+                                                          text,
+                                                          updateNoteCallBack,
+                                                          updateHashtagsCallBack,
+                                                          isEditMode
+                                                      }) => {
     const [value, setValue] = useState(text);
-    const changeValueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => setValue(e.currentTarget.value);
+    const changeValueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setValue(e.currentTarget.value);
+        updateHashtagsCallBack(e.currentTarget.value);
+    }
     const keyPressHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === 'Enter') updateNoteCallBack(value);
         if (e.key === 'Escape') setValue('');
@@ -38,5 +47,6 @@ interface TextItemPropsType {
     className?: string
     text: string
     updateNoteCallBack: (text: string) => void
+    updateHashtagsCallBack: (text: string) => void
     isEditMode: boolean
 }

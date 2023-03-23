@@ -17,6 +17,7 @@ export const Notes: React.FC<NotesPropsType> = ({notes}) => {
                                 hashtags={n.hashtags}
                                 removeNotesCallBack={value.removeNotesCallBack}
                                 updateNoteCallBack={value.updateNoteCallBack}
+                                updateHashtagsCallBack={value.updateHashtagsCallBack}
                             />
                         )
                     }

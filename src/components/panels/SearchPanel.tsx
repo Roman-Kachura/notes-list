@@ -5,6 +5,7 @@ export const SearchPanel: React.FC<SearchPanelPropsType> = ({searchTextValue, ch
     const [value, setValue] = useState(searchTextValue);
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value);
+
     }
     const keyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') changeSearchTextValueCallBack(value);

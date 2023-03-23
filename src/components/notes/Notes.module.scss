@@ -31,6 +31,10 @@
         padding: $general-padding;
         margin-top: 0.34722vw;
         font-size: 1vw;
+
+        span.hashtag{
+          color: $button-color;
+        }
       }
 
       button {
